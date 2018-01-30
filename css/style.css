@@ -1,30 +1,80 @@
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
     font-family: 'Titillium Web', sans-serif;
 }
 
 body {
-    background-color: red;
+    margin:0;
+    padding:0;
+    background-image: url('../img/background.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+
+.wrapper {
+    width:100%;
+}
+
+.pageheader {
+    margin-top: 55px;
+}
+
+.main-logo-container {
+    display: flex;
+    justify-content:center;
+    align-self:center;
+}
+
+.main-logo {
+    opacity:0.45;
+}
+
+.main-logo-title {
+    margin-left: 25px;
+    padding-top: 22px;
+    opacity: 0.45;
+}
+
+.forms__container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }
 
 .form__container {
     padding:20px;
-    max-width:420px;
-    background-color:#f4f4f4;
-    border: 20px solid rgba(0,0,0,0.1);
+    width:420px;
+    background-color: rgba(0,0,0,0.1);
     border-radius: 3px;
 }
 
 .form {
+    display: block;
     border-radius: 3px;
+    background-color:#f4f4f4;
+    padding:15px;
+}
+
+.form__caption {
+    font-size: 32px;
+    text-align:center;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(43,1,0,1);
+    margin: 25px 0;
 }
 
 .form__input {
     display:block;
     padding:15px 14px;
-    margin-top: 20px;
+    margin: 20px auto 0;
     width:340px;
     border-radius: 5px;
     border: 1px solid rgb(198,198,198);
@@ -41,15 +91,16 @@ body {
 .form__btn--large {
     display:block;
     width:340px;
-    padding:13px 0 16px 0;
+    padding:10px 0 12px 0;
     font-size: 24px;
     line-height: 24px;
+    margin: auto;
 }
 
 .form__btn--small {
     display:inline-block;
     width:139px;
-    padding:12px 0 10px 0;
+    padding:11px 0 10px 0;
     font-size: 24px;
     line-height: 24px;
 }
@@ -60,6 +111,11 @@ body {
     padding:13px;
     font-size: 18px;
     line-height: 18px;
+}
+
+.form__btn--right {
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .form__btn--submit {
@@ -100,19 +156,20 @@ input[type="checkbox"]{
     display: inline-block;
     position: relative;
     cursor: pointer;
-    margin: 13px 0 13px 0;
+    margin: 13px auto;
     user-select: none;
     color: rgb(175,175,175);
     font-weight: normal;
     font-size: 16px;
+
 }
 
 .form__checkmark {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    height: 13px;
-    width: 13px;
+    top: 7px;
+    left: 11px;
+    height: 12px;
+    width: 12px;
     border-radius: 3px;
     background: linear-gradient(#b1db57, #73ba0e);
     opacity:0;
@@ -126,18 +183,19 @@ input[type="checkbox"]{
 .form__check:before {
     content: "";
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 12px;
+    height: 12px;
     border-radius: 3px;
     vertical-align: middle;
     background-color: #ffffff;
     text-align: center;
     border: 1px solid rgb(198,198,198);
     margin-right: 15px;
+    margin-left:5px;
+    margin-bottom: 2px;
     padding:5px;
 
 }
-
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color:rgb(175,175,175);
