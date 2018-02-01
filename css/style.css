@@ -3,6 +3,28 @@
     font-family: 'Titillium Web', sans-serif;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color:rgb(175,175,175);
+    font-weight: normal;
+}
+  ::-moz-placeholder { /* Firefox 19+ */
+    color:rgb(175,175,175);
+    font-weight: normal;
+}
+  :-ms-input-placeholder { /* IE 10+ */
+    color:rgb(175,175,175);
+    font-weight: normal;
+}
+  :-moz-placeholder { /* Firefox 18- */
+    color:rgb(175,175,175);
+    font-weight: normal;
+}
+
+  textarea::-webkit-input-placeholder {
+    color:rgb(175,175,175);
+    font-weight: normal;
+}
+
 body {
     margin:0;
     padding:0;
@@ -10,6 +32,7 @@ body {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 1372px;
 }
 
 img {
@@ -18,41 +41,65 @@ img {
     display:block;
 }
 
+input[type="checkbox"]{
+    display: none;
+}
+
 .wrapper {
     width:100%;
+    height: 100%;
 }
 
 .pageheader {
     margin-top: 55px;
 }
 
-.main-logo-container {
+.logo {
     display: flex;
     justify-content:center;
     align-self:center;
 }
 
-.main-logo {
+.logo--top {
+    padding: 2%;
+}
+
+.logo--bottom {
+    width:100%;
+    margin-top: 60px;
+}
+
+.img-bottom {
+    opacity: 0.45;
+}
+
+.logo__img {
     opacity:0.45;
 }
 
-.main-logo-title {
+.logo__subtitle {
     margin-left: 25px;
     padding-top: 22px;
     opacity: 0.45;
 }
 
-.forms__container {
-    display:flex;
-    flex-wrap: wrap;
+.row {
+    display: flex;
     justify-content: space-around;
-    
+    flex-wrap: wrap;
+    margin-bottom: 55px;
+    padding: 0 2%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
 }
 
 .form__container {
-    padding:20px;
+    padding: 20px;
     width:420px;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
     border-radius: 3px;
 }
 
@@ -60,32 +107,62 @@ img {
     display: block;
     border-radius: 3px;
     background-color:#f4f4f4;
-    padding:15px;
+    padding: 20px;
 }
 
 .form__caption {
     font-size: 32px;
     text-align:center;
     color: white;
-    text-shadow: 1px 1px 1px rgba(43,1,0,1);
-    margin: 25px 0;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.7);
+    margin: 40px 0 20px 0;
 }
 
 .form__input {
     display:block;
-    padding:15px 14px;
+    padding:12px 14px 12px 80px;
     margin: 20px auto 0;
-    width:340px;
+    width:100%;
     border-radius: 5px;
     border: 1px solid rgb(198,198,198);
     outline: none;
     font-size:16px;
+    background-color:#f6f6f6;
+}
+
+label:first-child .form__input {
+    margin-top: 5px;
+}
+
+.form__input--user {
+    background: url('../icons/icon-user.png') 15px 13px no-repeat,
+    url('../icons/divider.png') 58px 8px no-repeat;
+}
+
+.form__input--message {
+    background: url('../icons/icon-message.png') 15px 17px no-repeat,
+    url('../icons/divider.png') 58px 8px no-repeat;
+}
+ 
+.form__input--password {
+    background: url('../icons/icon-password.png') 17px 12px no-repeat,
+    url('../icons/divider.png') 58px 8px no-repeat;
+
+}
+
+.form__input--phone {
+    background: url('../icons/icon-phone.png') 21px 12px no-repeat,
+    url('../icons/divider.png') 58px 8px no-repeat;
+}
+
+.form__input--location {
+    background: url('../icons/icon-location.png') 22px 12px no-repeat,
+    url('../icons/divider.png') 58px 8px no-repeat;
 }
 
 .form__btn {
     border-radius: 3px;
     color:white;
-    
 }
 
 .form__btn--large {
@@ -102,7 +179,8 @@ img {
     width:139px;
     padding:11px 0 10px 0;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 18px;
+    margin-top: 20px;
 }
 
 .form__btn--medium {
@@ -110,12 +188,8 @@ img {
     width:150px;
     padding:13px;
     font-size: 18px;
-    line-height: 18px;
-}
-
-.form__btn--right {
-    margin-left: auto;
-    margin-right: 0;
+    line-height: 13px;
+    margin-top:20px;
 }
 
 .form__btn--submit {
@@ -136,7 +210,12 @@ img {
     text-shadow: 1px 1px 1px #4e2605;
 }
 
+.form__btn--right {
+    float:right;
+}
+
 .form__message {
+    display: block;
     width:340px;
     resize: none;
     height:232px;
@@ -146,10 +225,8 @@ img {
     padding: 15px;
     font-family: 'Titillium Web', sans-serif;
     border: 1px solid rgb(198,198,198);
-}
-
-input[type="checkbox"]{
-    display: none;
+    margin:20px auto 0;
+    background-color:#f6f6f6;
 }
 
 .form__check {   
@@ -161,13 +238,16 @@ input[type="checkbox"]{
     color: rgb(175,175,175);
     font-weight: normal;
     font-size: 16px;
+}
 
+.form__check--sign {
+    margin-top: 30px;
 }
 
 .form__checkmark {
     position: absolute;
     top: 7px;
-    left: 11px;
+    left: 6px;
     height: 12px;
     width: 12px;
     border-radius: 3px;
@@ -191,30 +271,115 @@ input[type="checkbox"]{
     text-align: center;
     border: 1px solid rgb(198,198,198);
     margin-right: 15px;
-    margin-left:5px;
     margin-bottom: 2px;
     padding:5px;
-
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color:rgb(175,175,175);
-    font-weight: normal;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color:rgb(175,175,175);
-    font-weight: normal;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color:rgb(175,175,175);
-    font-weight: normal;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color:rgb(175,175,175);
-    font-weight: normal;
-  }
+@media only screen and (max-width: 1000px) {
 
-  textarea::-webkit-input-placeholder {
-    color:rgb(175,175,175);
-    font-weight: normal;
-  }
+    .row {
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+ 
+    .form__container {
+        width:90%;
+        margin: auto;
+    }
+
+    .col {
+        width:100%;
+    }
+
+    .form__input {
+        padding:8px 9px 8px 50px;
+        margin: 15px auto 0;
+        font-size:12px;
+        width:100%;
+    }
+
+    .form__message {
+        padding:8px 9px;
+        margin: 15px auto 0;
+        height:180px;
+        font-size:12px;
+        width:100%;
+    }
+
+    .form__btn--large {
+        width:100%;
+        padding:6px 0 8px 0;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .form__input--user {
+        background: url('../icons/icon-user.png') 8px 7px no-repeat,
+        url('../icons/divider.png') 40px 1px no-repeat;
+    }
+    
+    .form__input--message {
+        background: url('../icons/icon-message.png') 8px 10px no-repeat,
+        url('../icons/divider.png') 40px 1px no-repeat;
+    }
+     
+    .form__input--password {
+        background: url('../icons/icon-password.png') 10px 4px no-repeat,
+        url('../icons/divider.png') 40px 1px no-repeat;
+    
+    }
+    
+    .form__input--phone {
+        background: url('../icons/icon-phone.png') 14px 5px no-repeat,
+        url('../icons/divider.png') 40px 1px no-repeat;
+    }
+    
+    .form__input--location {
+        background: url('../icons/icon-location.png') 14px 6px no-repeat,
+        url('../icons/divider.png') 40px 1px no-repeat;
+    }
+
+    .form__check {
+        font-size: 3vw;
+    }
+
+    .form__check:before {
+        width: 8px;
+        height: 8px;
+        border-radius: 3px;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        padding:5px;
+    }
+
+    .form__checkmark {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 3px;
+        background: linear-gradient(#b1db57, #73ba0e);
+        opacity:0;
+        transition: all .3s ease-in-out;
+    }
+
+    .form__btn--medium {
+        display:inline-block;
+        width:40%;
+        padding:3.5%;
+        font-size: 14px;
+        line-height: 10px;
+        margin-top:20px;
+    }
+
+    .form__btn--small {
+        width:35%;
+        padding:10px 4% 10px 4%;
+        font-size: 16px;
+        line-height: 14px;
+ 
+    }
+}
