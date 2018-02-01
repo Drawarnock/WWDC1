@@ -65,7 +65,7 @@ input[type="checkbox"]{
 }
 
 .logo--bottom {
-    width:100%;
+    max-width:95%;
     margin-top: 60px;
 }
 
@@ -75,12 +75,6 @@ input[type="checkbox"]{
 
 .logo__img {
     opacity:0.45;
-}
-
-.logo__subtitle {
-    margin-left: 25px;
-    padding-top: 22px;
-    opacity: 0.45;
 }
 
 .row {
@@ -163,6 +157,8 @@ label:first-child .form__input {
 .form__btn {
     border-radius: 3px;
     color:white;
+    outline: none;
+    cursor: pointer;
 }
 
 .form__btn--large {
@@ -198,16 +194,25 @@ label:first-child .form__input {
     text-shadow: 1px 1px 1px #2e6b02;
 }
 
+.form__btn--submit:hover {
+    background: linear-gradient(#9ccb43, #6db20e);
+}
+
 .form__btn--disabled {
     background: linear-gradient(#cde4b0, #abd182);
     border: 1px solid #90ca6d;
     text-shadow: 1px 1px 1px #3a7008;
+    cursor: not-allowed;
 }
 
 .form__btn--reset {
     background: linear-gradient(#f76f7f, #f03747);
     border: 1px solid #a2202a;
     text-shadow: 1px 1px 1px #4e2605;
+}
+
+.form__btn--reset:hover {
+    background: linear-gradient(#e64e6e, #e02636);
 }
 
 .form__btn--right {
@@ -291,6 +296,10 @@ label:first-child .form__input {
 
     .col {
         width:100%;
+    }
+
+    .form__caption {
+        font-size:28px;
     }
 
     .form__input {
